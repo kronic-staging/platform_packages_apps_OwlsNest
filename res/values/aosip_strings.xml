@@ -51,6 +51,10 @@
     <string name="quicksettings_summary">Manage your quick tiles and expanded statusbar</string>
     <string name="expanded_category">Statusbar expanded</string>
 
+    <!-- Status bar quick qs pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Right edge of the status bar pulls down Quick Settings</string>
+
     <!--Owlsnest navigation-->
     <string name="navigation_title">Navigation bar options</string>
     <string name="navigation_summary">Customize Navbar size,buttons,layout,and colors</string>
