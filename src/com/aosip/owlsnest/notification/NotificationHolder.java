@@ -86,7 +86,7 @@ public class NotificationHolder extends SettingsPreferenceFragment {
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new BatteryLightSettings();
-            frags[1] = new HeadsUpSettings();
+            frags[1] = new HeadsUpCategory();
             frags[2] = new NotificationCategory();
             frags[3] = new NotificationLightSettings();
         }
