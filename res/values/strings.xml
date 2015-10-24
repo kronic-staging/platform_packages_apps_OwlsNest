@@ -419,6 +419,7 @@
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
     <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_torch">Flashlight</string>
+    <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
 
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Power menu animation</string>
