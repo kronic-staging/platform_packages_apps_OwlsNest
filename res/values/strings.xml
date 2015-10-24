@@ -392,6 +392,12 @@
     <string name="volbtn_music_controls_title">Music control</string>
     <string name="volbtn_music_controls_summary">With screen off, long pressing the volume keys will seek tracks</string>
 
+    <!-- Volume key cursor control -->
+    <string name="volbtn_cursor_control_title">Volume key cursor control</string>
+    <string name="volbtn_cursor_control_off">Disabled</string>
+    <string name="volbtn_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+
     <!-- Volume down enter do not disturb -->
     <string name="volbtn_down_zen_title">Volume down for do not disturb</string>
     <string name="volbtn_down_zen_summary">allow volume down to enter do not disturb mode</string>
