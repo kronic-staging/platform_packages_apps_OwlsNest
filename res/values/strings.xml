@@ -584,6 +584,10 @@
     <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across status bar</string>
     <string name="status_bar_brightness_control_info">Automatic brightness must be disabled</string>
 
+    <!-- double tap statusbar to sleep -->
+    <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
+    <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
+
     <!--Owlsnest advanced-->
     <string name="advanced_title">Advanced</string>
     <string name="advanced_summary">Extra features</string>
