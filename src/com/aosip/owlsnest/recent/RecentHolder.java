@@ -50,8 +50,6 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
-
-import com.aosip.owlsnest.recent.OmniSwitch;
 import com.aosip.owlsnest.recent.RecentCategory;
 import com.aosip.owlsnest.PagerSlidingTabStrip;
 
@@ -107,8 +105,7 @@ public class RecentHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new OmniSwitch();
-            frags[1] = new RecentCategory();
+            frags[0] = new RecentCategory();
         }
 
         @Override
@@ -130,7 +127,6 @@ public class RecentHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.omniswitch_category),
                     getString(R.string.recent_category)};
         return titleString;
     }
