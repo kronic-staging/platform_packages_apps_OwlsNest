@@ -50,7 +50,7 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
-;
+
 import com.aosip.owlsnest.recent.RecentCategory;
 import com.aosip.owlsnest.PagerSlidingTabStrip;
 
