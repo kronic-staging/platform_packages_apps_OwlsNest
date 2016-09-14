@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aosip.recent;
+package com.aosip.owlsnest.recent;
 
 import android.app.ActivityManager;
 import android.content.Context;
