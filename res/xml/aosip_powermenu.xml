@@ -30,5 +30,14 @@
         android:title="@string/keyguard_torch_title"
         android:summary="@string/keyguard_torch_summary"
         android:defaultValue="false" />
+
+     <com.aosip.owlsnest.preference.CustomSeekBarPreference
+        android:key="power_reboot_dialog_dim"
+        android:title="@string/powermenu_dialog_dim"
+        android:max="100"
+        settings:min="0"
+        settings:units=""
+        android:persistent="false" />
+
 </PreferenceScreen>
 
