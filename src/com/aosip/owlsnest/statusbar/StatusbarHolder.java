@@ -56,6 +56,7 @@ import com.aosip.owlsnest.statusbar.BatteryCategory;
 import com.aosip.owlsnest.statusbar.IconsCategory;
 import com.aosip.owlsnest.statusbar.ExtrasCategory;
 import com.aosip.owlsnest.statusbar.StatusBarTickerSettings;
+import com.aosip.owlsnest.statusbar.StatusBarLogo;
 import com.aosip.owlsnest.statusbar.TrafficCategory;
 import com.aosip.owlsnest.PagerSlidingTabStrip;
 
@@ -111,12 +112,13 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new BatteryCategory();
-            frags[1] = new ClockCategory();
-            frags[2] = new ExtrasCategory();
-            frags[3] = new IconsCategory();
-            frags[4] = new StatusBarTickerSettings();
-            frags[5] = new TrafficCategory();
+            frags[0] = new StatusBarLogo();
+            frags[1] = new BatteryCategory();
+            frags[2] = new ClockCategory();
+            frags[3] = new ExtrasCategory();
+            frags[4] = new IconsCategory();
+            frags[5] = new StatusBarTickerSettings();
+            frags[6] = new TrafficCategory();
         }
 
         @Override
@@ -138,7 +140,7 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-
+                    getString(R.string.logo_category),
                     getString(R.string.battery_category),
                     getString(R.string.clock_category),
                     getString(R.string.extra_category),
