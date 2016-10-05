@@ -53,10 +53,13 @@ public class TileCategory extends SettingsPreferenceFragment implements
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String KEY_SYSUI_QQS_COUNT = 
+            "sysui_qqs_count_key";
 
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mSysuiQqsCount;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -94,6 +97,22 @@ public class TileCategory extends SettingsPreferenceFragment implements
         mTileAnimationInterpolator.setValue(String.valueOf(tileAnimationInterpolator));
         updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
+
+        mSysuiQqsCount = (ListPreference) findPreference(KEY_SYSUI_QQS_COUNT);
+        if (mSysuiQqsCount != null) {
+           mSysuiQqsCount.setOnPreferenceChangeListener(this);
+           int SysuiQqsCount = Settings.Secure.getInt(resolver,
+                    Settings.Secure.QQS_COUNT, 5);
+           mSysuiQqsCount.setValue(Integer.toString(SysuiQqsCount));
+           mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntry());
+        }
+
+        mRowsPortrait = (ListPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_ROWS_PORTRAIT, 3);
+        mRowsPortrait.setValue(String.valueOf(rowsPortrait));
+        mRowsPortrait.setSummary(mRowsPortrait.getEntry());
+        mRowsPortrait.setOnPreferenceChangeListener(this);
     }
 
 
@@ -138,8 +157,15 @@ public class TileCategory extends SettingsPreferenceFragment implements
                     tileAnimationInterpolator, UserHandle.USER_CURRENT);
             updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
             return true;
-        }
-        return false;
+       } else if (preference == mSysuiQqsCount) {
+            String SysuiQqsCount = (String) newValue;
+            int SysuiQqsCountValue = Integer.parseInt(SysuiQqsCount);
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.QQS_COUNT, SysuiQqsCountValue);
+            int SysuiQqsCountIndex = mSysuiQqsCount.findIndexOfValue(SysuiQqsCount);
+            mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntries()[SysuiQqsCountIndex]);
+            return true;
+      }
+      return false;
     }
 
     private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
