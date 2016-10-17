@@ -51,6 +51,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
+import com.aosip.owlsnest.statusbar.CarrierLabelSettings;
 import com.aosip.owlsnest.statusbar.ClockCategory;
 import com.aosip.owlsnest.statusbar.BatteryCategory;
 import com.aosip.owlsnest.statusbar.IconsCategory;
@@ -111,12 +112,13 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new BatteryCategory();
-            frags[1] = new ClockCategory();
-            frags[2] = new ExtrasCategory();
-            frags[3] = new IconsCategory();
-            frags[4] = new StatusBarTickerSettings();
-            frags[5] = new TrafficCategory();
+            frags[0] = new CarrierLabelSettings();
+            frags[1] = new BatteryCategory();
+            frags[2] = new ClockCategory();
+            frags[3] = new ExtrasCategory();
+            frags[4] = new IconsCategory();
+            frags[5] = new StatusBarTickerSettings();
+            frags[6] = new TrafficCategory();
         }
 
         @Override
@@ -138,13 +140,13 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-
+                    getString(R.string.carrier_label_settings_title),
                     getString(R.string.battery_category),
                     getString(R.string.clock_category),
                     getString(R.string.extra_category),
                     getString(R.string.icon_category),
-                    getString(R.string.ticker_screen_title),
-                    getString(R.string.network_traffic_title)};
+                    getString(R.string.network_traffic_title),
+                    getString(R.string.ticker_screen_title)};
         return titleString;
     }
 }
