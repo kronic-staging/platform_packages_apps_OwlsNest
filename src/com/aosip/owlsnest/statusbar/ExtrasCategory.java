@@ -44,7 +44,6 @@ public class ExtrasCategory extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.aosip_extra);
-
     }
 
     @Override
@@ -56,4 +55,3 @@ public class ExtrasCategory extends SettingsPreferenceFragment implements
         return false;
     }
 }
-

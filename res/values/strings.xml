@@ -1118,4 +1118,8 @@
     <string name="custom_summary_title">Custom AOSiP summary</string>
     <string name="custom_summary_explain">Please enter a new summary. Leave blank to revert to stock text.</string>
  
+    <!-- Screenshot delay -->
+    <string name="screenshot_delay_title">Screenshot delay</string>
+    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
+
 </resources>

@@ -54,13 +54,23 @@
              android:title="@string/pref_scrollingcache_title"
              android:summary="@string/pref_scrollingcache_summary"
              android:entries="@array/entries_scrollingcache"
-             android:entryValues="@array/values_scrollingcache" /> 
+             android:entryValues="@array/values_scrollingcache" />
 
-        <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
-            android:key="toast_icon"
-            android:title="@string/toast_icon_title"
-            android:summary="@string/toast_icon_summary"
-            android:defaultValue="false" />
+         <com.aosip.owlsnest.preference.CustomSeekBarPreference
+             android:key="screenshot_delay"
+             android:title="@string/screenshot_delay_title"
+             android:summary="@string/screenshot_delay_summary"
+             android:max="10000"
+             settings:min="100"
+             settings:interval="100"
+             settings:units="ms"
+             android:persistent="false" />
+
+         <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
+             android:key="toast_icon"
+             android:title="@string/toast_icon_title"
+             android:summary="@string/toast_icon_summary"
+             android:defaultValue="false" />
 
         <Preference
              android:key="wakelockblocker"
