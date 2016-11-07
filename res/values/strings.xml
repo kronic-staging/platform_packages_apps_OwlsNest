@@ -493,6 +493,9 @@
     <string name="shortcut_category">Lockscreen shortcuts</string>
     <string name="lockscreen_secure_options_title">Secure Lockscreen options</string>
 
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
+
     <!-- Lockscreen cover art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
