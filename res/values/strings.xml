@@ -1113,13 +1113,18 @@
     <string name="smartbar_config_restore_error_toast">Error restoring Smartbar profile</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
 
+    <!-- Screenshot delay -->
+    <string name="screenshot_delay_title">Screenshot delay</string>
+    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
+
+    <!-- Screen record chord behavior -->
+    <string name="screen_record_chord_title">Power + volume up behavior</string>
+    <string name="screen_record_chord_screenrecord">Start screen recording</string>
+    <string name="screen_record_chord_selscreenshot">Take screenshot of selectable area</string>
+
     <!-- AOSIP summary text -->
     <string name="owlsnest_settings_summary_title">Custom AOSiP summary text in Settings application</string> 
     <string name="custom_summary_title">Custom AOSiP summary</string>
     <string name="custom_summary_explain">Please enter a new summary. Leave blank to revert to stock text.</string>
  
-    <!-- Screenshot delay -->
-    <string name="screenshot_delay_title">Screenshot delay</string>
-    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
-
 </resources>

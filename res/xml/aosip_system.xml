@@ -56,6 +56,12 @@
              android:entries="@array/entries_scrollingcache"
              android:entryValues="@array/values_scrollingcache" />
 
+        <ListPreference
+             android:key="screenrecord_chord_type"
+             android:title="@string/screen_record_chord_title"
+             android:entries="@array/screen_record_chord_entries"
+             android:entryValues="@array/screen_record_chord_values" />
+
          <com.aosip.owlsnest.preference.CustomSeekBarPreference
              android:key="screenshot_delay"
              android:title="@string/screenshot_delay_title"
