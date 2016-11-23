@@ -24,6 +24,14 @@
         android:key="breathing_notifications"
         android:title="@string/breathing_notifications_category">
 
+        <PreferenceScreen
+               android:title="@string/power_notification_title"
+               android:summary="@string/power_notification_summary">
+            <intent android:action="android.intent.action.MAIN"
+               android:targetPackage="com.android.systemui"
+               android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
+        </PreferenceScreen>
+
     <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
         android:key="missed_call_breath"
         android:title="@string/missed_call_breath_title"
