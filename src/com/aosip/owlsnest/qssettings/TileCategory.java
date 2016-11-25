@@ -58,12 +58,16 @@ public class TileCategory extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS = "qs_layout_columns";
     private static final String KEY_SYSUI_QQS_COUNT = 
             "sysui_qqs_count_key";
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
 
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
     private CustomSeekBarPreference mQsColumns;
     private ListPreference mSysuiQqsCount;
+    private CustomSeekBarPreference mRowsPortrait;
+    private CustomSeekBarPreference mRowsLandscape;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -75,6 +79,8 @@ public class TileCategory extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        int defaultValue;
 
         // Tile Animations
         mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
@@ -116,6 +122,19 @@ public class TileCategory extends SettingsPreferenceFragment implements
            mSysuiQqsCount.setValue(Integer.toString(SysuiQqsCount));
            mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntry());
         }
+
+        mRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getInt(resolver,
+                Settings.System.QS_ROWS_PORTRAIT, 3);
+        mRowsPortrait.setValue(rowsPortrait / 1);
+        mRowsPortrait.setOnPreferenceChangeListener(this);
+
+        defaultValue = getResources().getInteger(com.android.internal.R.integer.config_qs_num_rows_landscape_default);
+        mRowsLandscape = (CustomSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        int rowsLandscape = Settings.System.getInt(resolver,
+                Settings.System.QS_ROWS_LANDSCAPE, defaultValue);
+        mRowsLandscape.setValue(rowsLandscape / 1);
+        mRowsLandscape.setOnPreferenceChangeListener(this);
     }
 
 
@@ -171,6 +190,15 @@ public class TileCategory extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.QQS_COUNT, SysuiQqsCountValue);
             int SysuiQqsCountIndex = mSysuiQqsCount.findIndexOfValue(SysuiQqsCount);
             mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntries()[SysuiQqsCountIndex]);
+        } else if (preference == mRowsPortrait) {
+            int rowsPortrait = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_ROWS_PORTRAIT, rowsPortrait * 1);
+            return true;
+        } else if (preference == mRowsLandscape) {
+            int rowsLandscape = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_ROWS_LANDSCAPE, rowsLandscape * 1);
             return true;
       }
       return false;
