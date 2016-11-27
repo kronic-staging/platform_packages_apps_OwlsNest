@@ -82,6 +82,13 @@
         android:defaultValue="true"/>
 
     <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
+        android:key="music_tile_title"
+        android:title="@string/qs_music_tile_track_optional_title"
+        android:summary="@string/qs_music_tile_track_optional_summary"
+        android:dependency="qs_tile_title_visibility"
+        android:defaultValue="false"/>
+
+    <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
         android:key="quick_settings_vibrate"
         android:title="@string/quick_settings_vibrate_title"
         android:summary="@string/quick_settings_vibrate_summary"
