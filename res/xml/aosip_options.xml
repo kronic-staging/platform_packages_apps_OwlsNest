@@ -62,6 +62,12 @@
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
 
+         <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_charging_current"
+            android:title="@string/lockscreen_charging_current_title"
+            android:summary="@string/lockscreen_charging_current_summary"
+            android:defaultValue="false" />
+
      <PreferenceCategory
          android:key="lockscreen_secure_options"
          android:title="@string/lockscreen_secure_options_title" >
