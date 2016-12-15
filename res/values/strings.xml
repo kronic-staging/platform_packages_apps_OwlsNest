@@ -101,6 +101,8 @@
     <string name="clock_date_style_lowercase">Lowercase</string>
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
+    <string name="clock_font_style_title">Font</string>
+    <string name="clock_font_size_title">Font size</string>
 
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Ticker</string>
@@ -189,7 +191,6 @@
     <!-- Notification Count in Statusbar -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
-
 
     <!--Owlsnest navigation-->
     <string name="navigation_category">Navbar</string>
