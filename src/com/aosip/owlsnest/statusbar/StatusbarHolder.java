@@ -35,6 +35,7 @@ import com.aosip.owlsnest.statusbar.ClockCategory;
 import com.aosip.owlsnest.statusbar.BatteryCategory;
 import com.aosip.owlsnest.statusbar.IconsCategory;
 import com.aosip.owlsnest.statusbar.StatusBarTickerSettings;
+import com.aosip.owlsnest.statusbar.StatusBarWeather;
 import com.aosip.owlsnest.statusbar.TrafficCategory;
 import com.aosip.owlsnest.PagerSlidingTabStrip;
 
@@ -92,7 +93,8 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
             frags[2] = new ClockCategory();
             frags[3] = new IconsCategory();
             frags[4] = new TrafficCategory();
-            frags[5] = new StatusBarTickerSettings();
+            frags[5] = new StatusBarWeather();
+            frags[6] = new StatusBarTickerSettings();
         }
 
         @Override
@@ -119,6 +121,7 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
                     getString(R.string.clock_category),
                     getString(R.string.icon_category),
                     getString(R.string.network_traffic_title),
+                    getString(R.string.weather_category),
                     getString(R.string.ticker_screen_title)};
         return titleString;
         }
