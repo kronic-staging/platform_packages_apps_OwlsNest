@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.aosip.owlsnest.preference.CustomSeekBarPreference;
-import net.aosip.colorpicker.preference.ColorPickerPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class BatteryCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
