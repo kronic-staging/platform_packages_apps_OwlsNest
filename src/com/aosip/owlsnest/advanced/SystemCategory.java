@@ -39,10 +39,10 @@ import android.text.Spannable;
 import android.text.TextUtils;
 import android.widget.EditText;
 
-import com.android.internal.util.aosip.aosipUtils;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.aosip.owlsnest.preference.CustomSeekBarPreference;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -50,7 +50,6 @@ import java.util.HashSet;
 public class SystemCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot"; 
 	private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
@@ -62,7 +61,6 @@ public class SystemCategory extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mScreenshotDelay;
     private ListPreference mMsob;
 	private ListPreference mScrollingCachePref; 
-    private SwitchPreference mFlashlightNotification;
     private Preference mCustomSummary;
     private String mCustomSummaryText;
     private ListPreference mScreenrecordChordType;
@@ -75,7 +73,6 @@ public class SystemCategory extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PreferenceScreen prefSet = getPreferenceScreen();
         addPreferencesFromResource(R.xml.aosip_system);
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -91,19 +88,12 @@ public class SystemCategory extends SettingsPreferenceFragment implements
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
         mScrollingCachePref.setOnPreferenceChangeListener(this);
 
-        mFlashlightNotification = (SwitchPreference) findPreference(FLASHLIGHT_NOTIFICATION);
-        mFlashlightNotification.setOnPreferenceChangeListener(this);
-        if (!aosipUtils.deviceSupportsFlashLight(getActivity())) {
-            prefSet.removePreference(mFlashlightNotification);
-        } else {
-        mFlashlightNotification.setChecked((Settings.System.getInt(resolver,
-                Settings.System.FLASHLIGHT_NOTIFICATION, 0) == 1));
         mScreenshotDelay = (CustomSeekBarPreference) findPreference(SCREENSHOT_DELAY);
         int screenshotDelay = Settings.System.getInt(resolver,
                 Settings.System.SCREENSHOT_DELAY, 1000);
         mScreenshotDelay.setValue(screenshotDelay / 1);
         mScreenshotDelay.setOnPreferenceChangeListener(this);
-        }
+
         int recordChordValue = Settings.System.getInt(resolver,
                 Settings.System.SCREENRECORD_CHORD_TYPE, 0);
         mScreenrecordChordType = initActionList(SCREENRECORD_CHORD_TYPE,
@@ -119,12 +109,7 @@ public class SystemCategory extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if  (preference == mFlashlightNotification) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FLASHLIGHT_NOTIFICATION, checked ? 1:0);
-            return true;			
-		} else if (preference == mScrollingCachePref) {
+        if (preference == mScrollingCachePref) {
             if (newValue != null) {
                 SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
             }
@@ -138,7 +123,7 @@ public class SystemCategory extends SettingsPreferenceFragment implements
             mMsob.setSummary(mMsob.getEntry());
             return true;
         } else if (preference == mScreenshotDelay) {
-            int screenshotDelay = (Integer) objValue;
+            int screenshotDelay = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);
             return true;

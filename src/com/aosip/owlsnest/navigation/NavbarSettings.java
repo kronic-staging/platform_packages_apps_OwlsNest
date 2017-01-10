@@ -69,7 +69,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.navbar_settings);
+        addPreferencesFromResource(R.xml.aosip_navbar);
 
         mNavInterface = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_INTERFACE);
         mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);

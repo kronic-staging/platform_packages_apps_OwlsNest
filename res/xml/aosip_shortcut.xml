@@ -38,7 +38,7 @@
             android:summary="@string/lockscreen_corner_summary">
             <intent
                 android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
+                android:targetClass="com.android.systemui.aosip.LockscreenShortcutsActivity" />
         </PreferenceScreen>
 
 </PreferenceScreen>

@@ -30,7 +30,7 @@
     <com.aosip.owlsnest.preference.CustomSeekBarPreference
         android:key="qs_layout_columns"
         android:title="@string/qs_columns_title"
-        settings:max="7"
+        settings:max="8"
         settings:min="1"
         settings:units=""
         android:persistent="false" />

@@ -55,7 +55,6 @@ import com.aosip.owlsnest.statusbar.CarrierLabelSettings;
 import com.aosip.owlsnest.statusbar.ClockCategory;
 import com.aosip.owlsnest.statusbar.BatteryCategory;
 import com.aosip.owlsnest.statusbar.IconsCategory;
-import com.aosip.owlsnest.statusbar.ExtrasCategory;
 import com.aosip.owlsnest.statusbar.StatusBarTickerSettings;
 import com.aosip.owlsnest.statusbar.TrafficCategory;
 import com.aosip.owlsnest.PagerSlidingTabStrip;
@@ -115,10 +114,9 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
             frags[0] = new CarrierLabelSettings();
             frags[1] = new BatteryCategory();
             frags[2] = new ClockCategory();
-            frags[3] = new ExtrasCategory();
-            frags[4] = new IconsCategory();
-            frags[5] = new StatusBarTickerSettings();
-            frags[6] = new TrafficCategory();
+            frags[3] = new IconsCategory();
+            frags[4] = new StatusBarTickerSettings();
+            frags[5] = new TrafficCategory();
         }
 
         @Override
@@ -143,10 +141,9 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
                     getString(R.string.carrier_label_settings_title),
                     getString(R.string.battery_category),
                     getString(R.string.clock_category),
-                    getString(R.string.extra_category),
                     getString(R.string.icon_category),
-                    getString(R.string.network_traffic_title),
-                    getString(R.string.ticker_screen_title)};
+                    getString(R.string.ticker_screen_title),
+                    getString(R.string.network_traffic_title)};
         return titleString;
         }
     }
