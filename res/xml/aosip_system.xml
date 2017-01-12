@@ -71,5 +71,10 @@
              android:fragment="com.aosip.owlsnest.advanced.WakelockBlocker"
              android:title="@string/wakelockblocker_category" />
 
+        <Preference
+             android:key="screenstate_category"
+             android:title="@string/screen_state_toggles_title" 
+             android:fragment="com.aosip.owlsnest.advanced.ScreenStateToggles" />
+
 </PreferenceScreen>
 
