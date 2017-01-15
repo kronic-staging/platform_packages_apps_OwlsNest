@@ -107,8 +107,8 @@ public class NotificationHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new NotificationCategory();
-            frags[1] = new BatteryLightSettings();
+            frags[0] = new BatteryLightSettings();
+            frags[1] = new NotificationCategory();
             frags[2] = new NotificationLightSettings();
         }
 
@@ -131,8 +131,8 @@ public class NotificationHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.notification_title),
                     getString(R.string.omni_battery_light_settings),
+                    getString(R.string.notification_title),
                     getString(R.string.notification_light_title)};
         return titleString;
     }

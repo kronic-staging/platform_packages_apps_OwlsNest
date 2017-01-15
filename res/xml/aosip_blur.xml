@@ -23,12 +23,6 @@
         android:key="blur_colors_cat"
         android:title="@string/blur_colors_cat">
 
-        <Preference
-            style="?android:preferenceInformationStyle"
-            android:title="@string/blur_colors_notice"
-            android:summary="@string/blur_colors_notice_summary"
-            android:selectable="false" />
-
          <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="blur_light_color"
             android:title="@string/blur_light_color"
@@ -49,12 +43,6 @@
     <PreferenceCategory
         android:key="blur_expstatus_cat"
         android:title="@string/blur_expstatus_cat" >
-
-        <Preference
-            style="?android:preferenceInformationStyle"
-            android:title="@string/blur_notice"
-            android:summary="@string/blur_notice_summary"
-            android:selectable="false" />
 
         <SwitchPreference
             android:key="blurred_status_bar_expanded_enabled_pref"

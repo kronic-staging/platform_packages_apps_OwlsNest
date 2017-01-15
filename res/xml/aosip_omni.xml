@@ -20,15 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/omniswitch_category" >
 
-         <PreferenceScreen
-            android:key="omniswitch"
-            android:title="@string/omniswitch_category" >
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="org.omnirom.omniswitch"
-                android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
-         </PreferenceScreen>
-
         <SwitchPreference
             android:key="recents_use_omniswitch"
             android:title="@string/recents_use_omniswitch_title"

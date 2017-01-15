@@ -26,7 +26,8 @@
         android:key="nav_bar_dynamic"
         android:title="@string/nav_bar_dynamic_title"
         android:summary="@string/nav_bar_dynamic_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false"
+        android:dependency="navbar_visibility" />
 
     <PreferenceCategory
         android:key="category_navbar_interface"
