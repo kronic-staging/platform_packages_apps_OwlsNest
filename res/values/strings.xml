@@ -337,9 +337,9 @@
     <string name="smartbar_config_restore_error_toast">Error restoring Smartbar profile</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
 
-
     <string name="nav_bar_dynamic_title">Dynamic navbar color</string>
-    <string name="nav_bar_dynamic_summary">Automatically change the NavBar background color to your foreground apps primary dark color. Restart your desired app to see effect</string>
+    <string name="nav_bar_dynamic_summary">Automatically change the Navbar background color to your foreground apps primary dark color. Restart your desired app to see the new effect.</string>
+
 
     <!--Owlsnest Notification-->
     <string name="notification_title">Notification</string>
@@ -347,16 +347,16 @@
     <string name="breathing_notifications_category">Breathing Notifications</string>
 
     <!-- Force expanded notifications -->
-    <string name="force_expanded_notifications_title">Force Expanded Notifications</string>
+    <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
 
     <!-- Flashlight notification -->
     <string name="flashlight_notification_title">Flashlight notification</string>
-    <string name="flashlight_notification_summary">Enable notificiation for when the flashlight is on</string>
+    <string name="flashlight_notification_summary">Enable notification for when the flashlight is on</string>
 
     <!-- Disabling FC notifications -->
-    <string name="disable_fc_notifications_title">Disable FC Notifications</string>
-    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
+    <string name="disable_fc_notifications_title">Disable FC notifications</string>
+    <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
 
     <!-- Power notification controls -->
     <string name="power_notification_title">Power notification controls</string>
@@ -365,11 +365,11 @@
     <!-- Breathing Notifications -->
     <string name="breathing_notifications_title">Breathing notifications</string>
     <string name="missed_call_breath_title">Breathing Missed Call</string>
-    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
+    <string name="missed_call_breath_summary">Give missed call notification icon a breathing effect</string>
     <string name="voicemail_breath_title">Breathing Voicemail</string>
-    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
+    <string name="voicemail_breath_summary">Give voicemail notification icon a breathing effect</string>
     <string name="sms_breath_title">Breathing SMS</string>
-    <string name="sms_breath_summary">Will give your SMS notifications a breathing effect in the statusbar</string>
+    <string name="sms_breath_summary">Give SMS notification icon a breathing effect</string>
 
     <!-- LED notifications -->
     <string name="omni_battery_light_settings">Battery charging light</string>
@@ -413,7 +413,7 @@
     <string name="pulse_speed_very_slow">Very slow</string>
 
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_title">Enable Notification LED</string>
     <string name="notificationlight_title">Notification LED settings</string>
     <string name="notification_light_general_title">General</string>
     <string name="notification_light_applist_title">Apps</string>
@@ -427,8 +427,8 @@
     <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
     <string name="notification_light_use_multiple_leds">Multiple LEDs</string>
     <string name="keywords_lights_brightness_level">dim leds brightness</string>
-    <string name="notification_light_automagic">AutoColor</string>
-    <string name="notification_light_automagic_summary">Automatically set a proper color for the led notification if the app has no custom values</string>
+    <string name="notification_light_automagic">Auto Color</string>
+    <string name="notification_light_automagic_summary">Automatically set a proper color for the LED notification if the app has no custom values</string>
 
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Light settings</string>
@@ -440,6 +440,7 @@
     <string name="profile_choose_app">Choose app</string>
     <string name="reset">Reset</string>
     <string name="color_picker_dialog_title">Color</string>
+
 
     <!--Owlsnest Quick settings-->
     <string name="quicksettings_title">Quick Settings</string>
@@ -499,7 +500,7 @@
     <string name="qs_brightness_slider_summary">Show a brightness slider in the quick settings panel</string>
 
     <string name="brightness_icon_title">Brightness icon </string>
-    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+    <string name="brightness_icon_summary">Show a brightness icon to the left of the brightness slider to adjust auto-brightness</string>
 
     <!-- QS headers -->
     <string name="qs_header_category">Header options</string>
@@ -559,7 +560,7 @@
     <string name="buttons_summary">Tweak the actions of your device\'s physical buttons</string>
     <string name="powermenu_category">Power</string>
     <string name="volume_category">Volume</string>
-    <string name="powermenu_dialog_dim">Dialog dim background amount</string>
+    <string name="powermenu_dialog_dim">Dialog background dim amount</string>
 
     <!-- Hardware button navigation -->
     <string name="hardware_keys_title">Navigation</string>
@@ -610,7 +611,7 @@
 
     <!-- Volume do not disturb switch -->
     <string name="vol_zen_title">Do not disturb switch</string>
-    <string name="vol_zen_summary">Show do not disturb swith on volume panel</string>
+    <string name="vol_zen_summary">Show do not disturb switch on volume panel</string>
 
     <!-- powermenu fragment -->
     <string name="power_menu_title">Advanced power menu</string>
@@ -628,6 +629,7 @@
     <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_torch">Flashlight</string>
     <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
+
 
     <!--Owlsnest recentscreen-->
     <string name="recent_title">Recents</string>
@@ -657,7 +659,7 @@
 
     <!-- Recents Membar -->
     <string name="systemui_recents_mem_display_title">Show memory bar</string>
-    <string name="systemui_recents_mem_display_summary">Enable disable ram bar in recent app view</string>
+    <string name="systemui_recents_mem_display_summary">Enable/Disable RAM bar in Recents app view</string>
 
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Hidden apps</string>
@@ -682,7 +684,7 @@
     <string name="translucent_quick_settings_pref_summary">Blur the background of expanded status bar </string>
     <string name="transluency_level_universal">Translucency level</string>
     <string name="blurred_recent_app_enabled_pref">Blurred Recent Apps</string>
-    <string name="blurred_recent_app_enabled_pref_summary">Blur the background of Recent Apps activity</string>
+    <string name="blurred_recent_app_enabled_pref_summary">Blur the background of recent apps activity</string>
 
     <string name="blur_light_color">Light image color filter</string>
     <string name="blur_dark_color">Dark image color filter</string>
@@ -692,7 +694,7 @@
     <string name="blur_notifications_cat">Notifications</string>
     <string name="blur_qs_cat">Quick Settings</string>
     <string name="blur_recents_cat">Recent Apps</string> 
-    <string name="blur_colors_cat">Blur Color filters</string>
+    <string name="blur_colors_cat">Blur color filters</string>
     <string name="blur_notices_cat">Notices</string>
 
     <string name="blurred_scale">Blur Scale</string>
@@ -702,7 +704,7 @@
     <string name="blurred_radius_summary">Amount of blur</string>
 
     <string name="blur_cat_notice">Notice</string>
-    <string name="blur_cat_notice_summary">Blur personlizations are disabled during Keyguard view! Only Translucent Notifications are enabled!</string>
+    <string name="blur_cat_notice_summary">Blur personlizations are disabled during keyguard view! Only translucent notifications are enabled!</string>
 
 
     <!--Owlsnest lockscreen-->
@@ -721,7 +723,7 @@
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 
     <!-- Lockscreen shortcuts -->
-    <string name="lockscreen_shortcuts_title">Center screen Shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Center screen shortcuts</string>
     <string name="lockscreen_shortcuts_summary">Add center shortcuts on lockscreen</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
@@ -777,7 +779,7 @@
     <string name="weather_show_timestamp_title">Show timestamp</string>
     <string name="weather_show_timestamp_summary">Enable to show the timestamp</string>
     <string name="weather_condition_icon_title">Condition icon</string>
-    <string name="weather_condition_icon_dlg_title">Choose an icon for displaying the weather condition</string>
+    <string name="weather_condition_icon_dlg_title">Weather Condition Icon Set</string>
     <string name="weather_condition_icon_monochrome_title">Monochrome</string>
     <string name="weather_condition_icon_colored_title">Colored</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
@@ -790,8 +792,8 @@
     <string name="weather_hide_panel_auto_title">Auto</string>
     <string name="weather_hide_panel_custom_title">Custom</string>
     <string name="weather_hide_panel_never_title">Never</string>
-    <string name="weather_hide_panel_auto_summary">The weather panel will be hidden when the visible notifications will reach the maximum allowed notifications on the lock screen</string>
-    <string name="weather_hide_panel_custom_summary">The weather panel will be hidden when the visible notifications will reach the chosen number of notifications</string>
+    <string name="weather_hide_panel_auto_summary">The weather panel will be hidden when the visible notifications reach the maximum allowed notifications on the lock screen</string>
+    <string name="weather_hide_panel_custom_summary">The weather panel will be hidden when the visible notifications reach the chosen number of notifications</string>
     <string name="weather_hide_panel_never_summary">The weather panel won\`t be hidden</string>
     <string name="weather_number_of_notifications_title">Number of notifications</string>
 
@@ -870,7 +872,7 @@
 
 
     <!--Owlsnest advanced-->
-    <string name="advanced_title">Advanced</string>
+    <string name="advanced_title">Advanced System Settings</string>
     <string name="advanced_summary">Extra features</string>
     <string name="animation_category">Animations</string>
     <string name="system_category">System Settings</string>
@@ -1081,7 +1083,7 @@
 
     <!-- Lockscreen Torch toggle -->
     <string name="keyguard_torch_title">Lockscreen torch</string>
-    <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
+    <string name="keyguard_torch_summary">Long pressing the power button while screen is off turns on the flashlight</string>
 
     <!-- Wakelock blocker -->
     <string name="wakelockblocker_category">Wakelock Blocker</string>
@@ -1133,7 +1135,7 @@
     <string name="screen_record_chord_selscreenshot">Take screenshot of selectable area</string>
 
     <!-- AOSIP summary text -->
-    <string name="owlsnest_settings_summary_title">Custom AOSiP summary text in Settings application</string> 
+    <string name="owlsnest_settings_summary_title">Custom AOSiP summary text</string> 
     <string name="custom_summary_title">Custom AOSiP summary</string>
     <string name="custom_summary_explain">Please enter a new summary. Leave blank to revert to stock text.</string>
  
