@@ -16,9 +16,6 @@
 
 package com.aosip.owlsnest.lockscreen;
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.preference.Preference;

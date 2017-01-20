@@ -16,10 +16,8 @@
 
 package com.aosip.owlsnest.lockscreen;
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.hardware.fingerprint.FingerprintManager;
@@ -28,7 +26,6 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.aosip.owlsnest.preference.SystemSettingSwitchPreference;

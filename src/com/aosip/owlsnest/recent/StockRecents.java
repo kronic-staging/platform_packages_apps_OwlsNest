@@ -16,13 +16,9 @@
 
 package com.aosip.owlsnest.recent;
 
-import android.content.Context;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;

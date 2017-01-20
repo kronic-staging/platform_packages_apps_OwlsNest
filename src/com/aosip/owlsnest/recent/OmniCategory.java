@@ -16,8 +16,6 @@
 
 package com.aosip.owlsnest.recent;
 
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -67,14 +65,7 @@ public class OmniCategory extends SettingsPreferenceFragment implements OnPrefer
         ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        // Remove the omniswitch preference if its not installed
-        if (!isPackageInstalled("org.omnirom.omniswitch")) {
-            removePreference(KEY_OMNISWITCH);
-        }
-
-        mRecentsUseOmniSwitch = (SwitchPreference)
-                prefSet.findPreference(RECENTS_USE_OMNISWITCH);
-
+        mRecentsUseOmniSwitch = (SwitchPreference) prefSet.findPreference(RECENTS_USE_OMNISWITCH);
         try {
             mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
                     Settings.System.RECENTS_USE_OMNISWITCH) == 1);
@@ -82,6 +73,7 @@ public class OmniCategory extends SettingsPreferenceFragment implements OnPrefer
         } catch(SettingNotFoundException e){
             // if the settings value is unset
         }
+
         mRecentsUseOmniSwitch.setOnPreferenceChangeListener(this);
 
         mOmniSwitchSettings = (Preference)
@@ -108,11 +100,9 @@ public class OmniCategory extends SettingsPreferenceFragment implements OnPrefer
             Settings.System.putInt(
                     resolver, Settings.System.RECENTS_USE_OMNISWITCH, value ? 1 : 0);
             mOmniSwitchSettings.setEnabled(value);
-        } else {
-            return false;
+            return true;
         }
-
-        return true;
+        return false;
     }
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
@@ -125,24 +115,12 @@ public class OmniCategory extends SettingsPreferenceFragment implements OnPrefer
 
     private void openOmniSwitchFirstTimeWarning() {
         new AlertDialog.Builder(getActivity())
-                .setTitle(getResources().getString(R.string.omniswitch_first_time_title))
-                .setMessage(getResources().getString(R.string.omniswitch_first_time_message))
-                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                        }
-                }).show();
+             .setTitle(getResources().getString(R.string.omniswitch_first_time_title))
+             .setMessage(getResources().getString(R.string.omniswitch_first_time_message))
+             .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+             public void onClick(DialogInterface dialog, int whichButton) {
+             }
+        }).show();
     }
-    private boolean isPackageInstalled(String packageName) {
-        PackageManager pm = getPackageManager();
-        boolean installed = false;
-        try {
-           pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
-           installed = true;
-        } catch (PackageManager.NameNotFoundException e) {
-           installed = false;
-        }
-        return installed;
-    }
-
 }
 

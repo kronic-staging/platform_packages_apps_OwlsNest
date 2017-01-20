@@ -16,18 +16,12 @@
 
 package com.aosip.owlsnest.buttons;
 
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
 import com.aosip.owlsnest.preference.CustomSeekBarPreference;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;

@@ -17,20 +17,14 @@
 package com.aosip.owlsnest.advanced;
 
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.format.DateFormat;
-import android.view.View;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
@@ -38,10 +32,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 import com.aosip.owlsnest.preference.CustomSeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
