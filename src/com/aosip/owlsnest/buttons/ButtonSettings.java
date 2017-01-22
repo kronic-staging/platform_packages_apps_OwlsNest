@@ -166,8 +166,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                 mButtonBrightness.setOnPreferenceChangeListener(this);
             }
         } else {
-            prefScreen.removePreference(mBacklightTimeout);
-            prefScreen.removePreference(mButtonBrightness);
+            prefScreen.removePreference(hwkeyCat);
         }
 
         // let super know we can load ActionPreferences
