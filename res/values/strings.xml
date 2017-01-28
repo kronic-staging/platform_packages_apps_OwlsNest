@@ -392,6 +392,11 @@
     <string name="notification_summary">Adjust LEDs and notification behavior</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
 
+    <!-- Heads up -->
+    <string name="heads_up_notifications">Heads up</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
