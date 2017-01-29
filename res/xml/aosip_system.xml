@@ -62,6 +62,11 @@
              android:defaultValue="false" />
 
         <Preference
+             android:id="@+id/alarm_blocker"
+             android:title="@string/alarm_blocker"
+             android:fragment="com.aosip.owlsnest.advanced.AlarmBlocker" />
+
+        <Preference
              android:key="wakelockblocker"
              android:fragment="com.aosip.owlsnest.advanced.WakelockBlocker"
              android:title="@string/wakelockblocker_category" />
