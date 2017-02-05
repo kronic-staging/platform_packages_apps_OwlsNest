@@ -62,12 +62,6 @@
             android:defaultValue="true" />
 
          <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_enable_power_menu"
-            android:title="@string/lockscreen_enable_power_menu_title"
-            android:summary="@string/lockscreen_enable_power_menu_summary"
-            android:defaultValue="true" />
-
-         <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
@@ -81,6 +75,18 @@
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"
             android:summary="@string/fprint_sucess_vib_summary"
+            android:defaultValue="true" />
+
+         <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
+            android:key="fp_unlock_keystore"
+            android:title="@string/fp_unlock_keystore_title"
+            android:summary="@string/fp_unlock_keystore_summary"
+            android:defaultValue="false" />
+
+         <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_enable_power_menu"
+            android:title="@string/lockscreen_enable_power_menu_title"
+            android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
 
      </PreferenceCategory>

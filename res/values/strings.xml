@@ -826,6 +826,10 @@
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display real time charger current, voltage and battery temperature on lockscreen while charging</string>
 
+    <!-- Fingerprint unlock keystore -->
+    <string name="fp_unlock_keystore_title">Fingerprint unlock after reboot</string>
+    <string name="fp_unlock_keystore_summary">Allow device to always be unlocked with fingerprint, even after reboot</string>
+
     <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_title">Center screen shortcuts</string>
     <string name="lockscreen_shortcuts_summary">Add center shortcuts on lockscreen</string>
