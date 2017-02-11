@@ -637,25 +637,6 @@ limitations under the License.
         <item>5000</item>
     </string-array>
 
-    <!--- Small tiles count -->
-    <string-array name="sysui_qqs_count_entries">
-        <item>@string/sysui_qqs_count_3</item>
-        <item>@string/sysui_qqs_count_4</item>
-        <item>@string/sysui_qqs_count_5_default</item>
-        <item>@string/sysui_qqs_count_6</item>
-        <item>@string/sysui_qqs_count_7</item>
-        <item>@string/sysui_qqs_count_8</item>
-    </string-array>
-
-    <string-array name="sysui_qqs_count_values">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-    </string-array>
-
 	<!-- Option to enable/disable scrolling cache -->
 	<string-array name="entries_scrollingcache" translatable="false">
 	    <item>@string/pref_scrollingcache_force_enable</item>

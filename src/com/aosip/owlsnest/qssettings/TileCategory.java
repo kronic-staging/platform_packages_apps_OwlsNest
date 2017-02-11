@@ -39,8 +39,6 @@ public class TileCategory extends SettingsPreferenceFragment implements
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String PREF_COLUMNS = "qs_layout_columns";
-    private static final String KEY_SYSUI_QQS_COUNT = 
-            "sysui_qqs_count_key";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
 
@@ -48,7 +46,6 @@ public class TileCategory extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
     private CustomSeekBarPreference mQsColumns;
-    private ListPreference mSysuiQqsCount;
     private CustomSeekBarPreference mRowsPortrait;
     private CustomSeekBarPreference mRowsLandscape;
 
@@ -97,15 +94,6 @@ public class TileCategory extends SettingsPreferenceFragment implements
         mQsColumns.setValue(columnsQs / 1);
         mQsColumns.setOnPreferenceChangeListener(this);
 
-        mSysuiQqsCount = (ListPreference) findPreference(KEY_SYSUI_QQS_COUNT);
-        if (mSysuiQqsCount != null) {
-           mSysuiQqsCount.setOnPreferenceChangeListener(this);
-           int SysuiQqsCount = Settings.Secure.getInt(resolver,
-                    Settings.Secure.QQS_COUNT, 5);
-           mSysuiQqsCount.setValue(Integer.toString(SysuiQqsCount));
-           mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntry());
-        }
-
         mRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
         int rowsPortrait = Settings.System.getInt(resolver,
                 Settings.System.QS_ROWS_PORTRAIT, 3);
@@ -119,7 +107,6 @@ public class TileCategory extends SettingsPreferenceFragment implements
         mRowsLandscape.setValue(rowsLandscape / 1);
         mRowsLandscape.setOnPreferenceChangeListener(this);
     }
-
 
     @Override
     protected int getMetricsCategory() {
@@ -167,12 +154,6 @@ public class TileCategory extends SettingsPreferenceFragment implements
             int qsColumns = (Integer) newValue;
             Settings.System.putInt(resolver, Settings.System.QS_LAYOUT_COLUMNS, qsColumns * 1);
             return true;
-       } else if (preference == mSysuiQqsCount) {
-            String SysuiQqsCount = (String) newValue;
-            int SysuiQqsCountValue = Integer.parseInt(SysuiQqsCount);
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.QQS_COUNT, SysuiQqsCountValue);
-            int SysuiQqsCountIndex = mSysuiQqsCount.findIndexOfValue(SysuiQqsCount);
-            mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntries()[SysuiQqsCountIndex]);
         } else if (preference == mRowsPortrait) {
             int rowsPortrait = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),

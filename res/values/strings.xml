@@ -525,14 +525,9 @@
     <string name="expanded_category">Expanded</string>
     <string name="tile_category">Tile Options</string>
 
-    <!--- Small tiles count -->
-    <string name="sysui_qqs_count_title">Small quick tiles count</string>
-    <string name="sysui_qqs_count_3">3</string>
-    <string name="sysui_qqs_count_4">4</string>
-    <string name="sysui_qqs_count_5_default">5 (default)</string>
-    <string name="sysui_qqs_count_6">6</string>
-    <string name="sysui_qqs_count_7">7</string>
-    <string name="sysui_qqs_count_8">8</string>
+    <!--- Small tiles scroll -->
+    <string name="qqs_scroll_title">Scroll small QS tiles</string>
+    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
 
     <string name="qs_tile_title_visibility_title">QS tile titles</string>
     <string name="qs_tile_title_visibility_summary_on">QS tiles titles are now visible</string>
