@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2015 Android Open Source Illusion Project
+<!--  Copyright (C) 2017 Android Open Source Illusion Project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -66,69 +66,6 @@
         android:title="@string/status_bar_battery_style_tile_title"
         android:summary="@string/status_bar_battery_style_tile_summary"
         android:defaultValue="true" />
-
-    <ListPreference
-        android:key="battery_bar_list"
-        android:title="@string/battery_bar"
-        android:entries="@array/battery_bar_entries"
-        android:entryValues="@array/battery_bar_values" />
-
-    <ListPreference
-        android:key="battery_bar_no_navbar_list"
-        android:title="@string/battery_bar_no_navbar"
-        android:entries="@array/battery_bar_no_navbar_entries"
-        android:entryValues="@array/battery_bar_no_navbar_values" />
-
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="battery_bar_color"
-        android:title="@string/battery_bar_color"
-        android:defaultValue="0xffffffff" />
-
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="battery_bar_battery_low_color"
-        android:title="@string/battery_bar_battery_low_color"
-        android:defaultValue="0xffffffff" />
-
-    <com.aosip.owlsnest.preference.SecureSettingSwitchPreference
-        android:key="battery_bar_enable_charging_color"
-        android:title="@string/battery_bar_use_charging_color"
-        android:defaultValue="true" />
-
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="battery_bar_charging_color"
-        android:title="@string/battery_bar_charging_color"
-        android:defaultValue="0xffffffff"
-        android:dependency="battery_bar_enable_charging_color" />
-
-    <com.aosip.owlsnest.preference.SecureSettingSwitchPreference
-        android:key="battery_bar_blend_color"
-        android:title="@string/battery_bar_blend_color_title"
-        android:summary="@string/battery_bar_blend_color_summary"
-        android:defaultValue="false" />
-
-    <com.aosip.owlsnest.preference.SecureSettingSwitchPreference
-        android:key="battery_bar_blend_color_reverse"
-        android:title="@string/battery_bar_blend_color_reverse_title"
-        android:summaryOn="@string/battery_bar_blend_color_reverse_summary_on"
-        android:summaryOff="@string/battery_bar_blend_color_reverse_summary_off"
-        android:dependency="battery_bar_blend_color"
-        android:defaultValue="false" />
-
-    <ListPreference
-        android:key="battery_bar_style"
-        android:title="@string/battery_bar_style_title"
-        android:entries="@array/battery_bar_style_entries"
-        android:entryValues="@array/battery_bar_style_values" />
-
-    <ListPreference
-        android:key="battery_bar_thickness"
-        android:title="@string/battery_bar_thickness_title"
-        android:entries="@array/battery_bar_thickness_entries"
-        android:entryValues="@array/battery_bar_thickness_values" />
-
-    <SwitchPreference
-        android:key="battery_bar_animate"
-        android:title="@string/battery_bar_animate_title" />
 
 </PreferenceScreen>
 
