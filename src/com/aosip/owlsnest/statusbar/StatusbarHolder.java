@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import com.aosip.owlsnest.statusbar.CarrierLabelSettings;
 import com.aosip.owlsnest.statusbar.ClockCategory;
+import com.aosip.owlsnest.statusbar.CustomLogo;
 import com.aosip.owlsnest.statusbar.BatteryCategory;
 import com.aosip.owlsnest.statusbar.BatteryBarCategory;
 import com.aosip.owlsnest.statusbar.IconsCategory;
@@ -93,10 +94,11 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
             frags[1] = new BatteryBarCategory();
             frags[2] = new CarrierLabelSettings();
             frags[3] = new ClockCategory();
-            frags[4] = new IconsCategory();
-            frags[5] = new TrafficCategory();
-            frags[6] = new StatusBarWeather();
-            frags[7] = new StatusBarTickerSettings();
+            frags[4] = new CustomLogo();
+            frags[5] = new IconsCategory();
+            frags[6] = new TrafficCategory();
+            frags[7] = new StatusBarWeather();
+            frags[8] = new StatusBarTickerSettings();
         }
 
         @Override
@@ -122,6 +124,7 @@ public class StatusbarHolder extends SettingsPreferenceFragment {
                     getString(R.string.battery_bar_title),
                     getString(R.string.carrier_label_settings_title),
                     getString(R.string.clock_category),
+                    getString(R.string.sb_custom_logos),
                     getString(R.string.icon_category),
                     getString(R.string.network_traffic_title),
                     getString(R.string.weather_category),
