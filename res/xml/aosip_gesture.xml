@@ -36,4 +36,13 @@
         android:summary="@string/double_tap_sleep_anywhere_summary"
         android:defaultValue="false" />
 
+    <PreferenceScreen
+        android:key="oneplus_gestures"
+        android:title="@string/oneplusdoze_category" >
+        <intent
+            android:action="com.android.settings.action.EXTRA_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
+    </PreferenceScreen>
+
 </PreferenceScreen>

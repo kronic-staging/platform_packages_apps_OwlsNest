@@ -960,6 +960,7 @@
     <!--Owlsnest Gestures-->
     <string name="gesture_category">Gestures</string>
     <string name="gesture_summary">Gesture based options/actions</string>
+    <string name="oneplusdoze_category">Device extras</string>
 
     <!-- Status bar brightness control -->
     <string name="status_bar_brightness_control_title">Brightness control</string>

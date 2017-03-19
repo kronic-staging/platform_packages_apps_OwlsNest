@@ -19,12 +19,15 @@ package com.aosip.owlsnest.gesture;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
+import com.android.internal.util.aosip.aosipUtils;
 import com.android.settings.R;
-import android.provider.Settings.SettingNotFoundException; 
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
@@ -33,14 +36,16 @@ public class GestureCategory extends SettingsPreferenceFragment implements
     private static final String TAG = "GestureCategory";
 
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+    private static final String KEY_ONEPLUS_GESTURES = "oneplus_gestures";
+    private static final String KEY_ONEPLUS_GESTURES_PACKAGE_NAME = "com.cyanogenmod.settings.device";
 
     private SwitchPreference mStatusBarBrightnessControl;
+    private PreferenceScreen mOneplusGestures;
 
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.OWLSNEST;
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,7 @@ public class GestureCategory extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.aosip_gesture);
         final ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mStatusBarBrightnessControl = (SwitchPreference) findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
         mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
@@ -60,7 +66,12 @@ public class GestureCategory extends SettingsPreferenceFragment implements
                 mStatusBarBrightnessControl.setEnabled(false);
                 mStatusBarBrightnessControl.setSummary(R.string.status_bar_brightness_control_info);
             }
-        } catch (SettingNotFoundException e) {
+          } catch (SettingNotFoundException e) {
+        }
+
+        mOneplusGestures = (PreferenceScreen) findPreference(KEY_ONEPLUS_GESTURES);
+        if (!aosipUtils.isPackageInstalled(getActivity(), KEY_ONEPLUS_GESTURES_PACKAGE_NAME)) {
+            prefSet.removePreference(mOneplusGestures);
         }
       }
 
@@ -72,11 +83,10 @@ public class GestureCategory extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mStatusBarBrightnessControl) {
            boolean value = (Boolean) newValue;
-           Settings.System.putInt(getContentResolver(), STATUS_BAR_BRIGHTNESS_CONTROL,
-                    value ? 1 : 0);
-              return true;
-          }        
-       return false;
-    }
+           Settings.System.putInt(getContentResolver(), STATUS_BAR_BRIGHTNESS_CONTROL, value ? 1 : 0);
+           return true;
+         }        
+      return false;
+   }
 }
 
