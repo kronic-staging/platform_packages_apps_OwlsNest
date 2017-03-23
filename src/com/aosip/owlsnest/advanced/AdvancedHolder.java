@@ -33,7 +33,6 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
-import com.aosip.owlsnest.advanced.AnimationSettings;
 import com.aosip.owlsnest.advanced.BlurPersonalizations;
 import com.aosip.owlsnest.advanced.SystemCategory;
 import com.aosip.owlsnest.PagerSlidingTabStrip;
@@ -87,9 +86,8 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new AnimationSettings();
-            frags[1] = new BlurPersonalizations();
-            frags[2] = new SystemCategory();
+            frags[0] = new BlurPersonalizations();
+            frags[1] = new SystemCategory();
         }
 
         @Override
@@ -111,7 +109,6 @@ public class AdvancedHolder extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.animation_category),
                     getString(R.string.settings_blur_cat),
                     getString(R.string.system_category)};
         return titleString;
