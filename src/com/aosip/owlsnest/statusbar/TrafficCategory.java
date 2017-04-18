@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,11 @@ public class TrafficCategory extends SettingsPreferenceFragment implements
     private static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
     private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
+    private CustomSeekBarPreference mNetTrafficAutohideThreshold;
     private ListPreference mNetTrafficState;
     private ListPreference mNetTrafficUnit;
     private ListPreference mNetTrafficPeriod;
     private SwitchPreference mNetTrafficAutohide;
-    private CustomSeekBarPreference mNetTrafficAutohideThreshold;
     private SwitchPreference mNetTrafficHidearrow;
 
     private int mNetTrafficVal;
@@ -116,7 +116,6 @@ public class TrafficCategory extends SettingsPreferenceFragment implements
             mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntry());
             mNetTrafficPeriod.setOnPreferenceChangeListener(this);
         }
-
     }
 
     @Override

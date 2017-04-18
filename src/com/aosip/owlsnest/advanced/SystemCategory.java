@@ -48,10 +48,10 @@ public class SystemCategory extends SettingsPreferenceFragment implements
 
     private CustomSeekBarPreference mScreenshotDelay;
     private ListPreference mMsob;
-	private ListPreference mScrollingCachePref; 
+	private ListPreference mScrollingCachePref;
+    private ListPreference mScreenrecordChordType;
     private Preference mCustomSummary;
     private String mCustomSummaryText;
-    private ListPreference mScreenrecordChordType;
 
     @Override
     protected int getMetricsCategory() {

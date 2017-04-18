@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,12 +68,12 @@ public class ClockCategory extends SettingsPreferenceFragment implements
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
+    private CustomSeekBarPreference mStatusBarClockFontSize;
     private ListPreference mClockStyle;
     private ListPreference mClockAmPmStyle;
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mFontStyle;
-    private CustomSeekBarPreference mStatusBarClockFontSize;
     private ListPreference mClockDatePosition;
     private ListPreference mClockDateFormat;
     private SwitchPreference mStatusBarClock;

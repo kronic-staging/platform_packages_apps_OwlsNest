@@ -233,6 +233,10 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Show roaming indicator</string>
+    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
+
     <!--Owlsnest navigation-->
     <string name="navigation_category">Navbar</string>
     <string name="navigation_title">Navigation</string>
@@ -875,6 +879,10 @@
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
 
+    <!-- Keyguard Statusbar Clock -->
+    <string name="keyguard_statusbar_clock_title">Keyguard statusbar clock</string>
+    <string name="keyguard_statusbar_clock_summary">Show the left statusbar clock on the keyguard</string>
+
     <!-- Lockscreen cover art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
@@ -1226,9 +1234,6 @@
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
 
-    <!-- Option to show brightness bar in quick settings -->
-    <string name="show_brightness">Show brightness slider</string>
-
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
     <string name="media_scanner_on_boot_enabled">Scan media</string>
@@ -1270,13 +1275,5 @@
     <string name="owlsnest_settings_summary_title">Custom AOSiP summary text</string> 
     <string name="custom_summary_title">Custom AOSiP summary</string>
     <string name="custom_summary_explain">Please enter a new summary. Leave blank to revert to stock text.</string>
-
-    <!-- Keyguard Statusbar Clock -->
-    <string name="keyguard_statusbar_clock_title">Keyguard statusbar clock</string>
-    <string name="keyguard_statusbar_clock_summary">Show the left statusbar clock on the keyguard</string>
-
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Show roaming indicator</string>
-    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
 
 </resources>

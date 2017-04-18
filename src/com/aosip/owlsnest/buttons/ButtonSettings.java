@@ -35,8 +35,8 @@ import com.android.settings.R;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.utils.du.ActionConstants;
-import com.aosip.owlsnest.utils.ActionFragment;
 import com.android.internal.utils.du.DUActionUtils;
+import com.aosip.owlsnest.utils.ActionFragment;
 import com.aosip.owlsnest.preference.CustomSeekBarPreference;
 
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
@@ -154,16 +154,16 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             if (mBacklightTimeout != null) {
         	mBacklightTimeout.setOnPreferenceChangeListener(this);
         	int BacklightTimeout = Settings.System.getInt(getContentResolver(),
-                        Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 5000);
+                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 5000);
         	mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
         	mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
             }
 
             if (mButtonBrightness != null) {
-                int ButtonBrightness = Settings.System.getInt(getContentResolver(),
-                                Settings.System.BUTTON_BRIGHTNESS, 255);
-                mButtonBrightness.setValue(ButtonBrightness / 1);
-                mButtonBrightness.setOnPreferenceChangeListener(this);
+            int ButtonBrightness = Settings.System.getInt(getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, 255);
+            mButtonBrightness.setValue(ButtonBrightness / 1);
+            mButtonBrightness.setOnPreferenceChangeListener(this);
             }
         } else {
             prefScreen.removePreference(hwkeyCat);

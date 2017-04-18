@@ -16,9 +16,10 @@
  -->
 
 <PreferenceScreen
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-     android:title="@string/heads_up_notifications" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:layout="@layout/tab_ui"
+    android:title="@string/heads_up_notifications" >
 
     <com.aosip.owlsnest.preference.GlobalSettingSwitchPreference
         android:key="heads_up_notifications_enabled"

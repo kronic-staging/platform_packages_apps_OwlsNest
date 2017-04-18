@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v14.preference.SwitchPreference;
+
 import android.provider.Settings;
 import com.android.settings.R;
 import android.provider.Settings.SettingNotFoundException; 
@@ -65,7 +66,7 @@ public class HeadsUpCategory extends SettingsPreferenceFragment implements
         }
 
         int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
+                "com.android.systemui:integer/heads_up_notification_decay", null, null));
         mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
         mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
         int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
@@ -74,7 +75,7 @@ public class HeadsUpCategory extends SettingsPreferenceFragment implements
         updateHeadsUpTimeOutSummary(headsUpTimeOut);
 
         int defaultSnooze = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_default_snooze_length_ms", null, null));
+                "com.android.systemui:integer/heads_up_default_snooze_length_ms", null, null));
         mHeadsUpSnoozeTime = (ListPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
         mHeadsUpSnoozeTime.setOnPreferenceChangeListener(this);
         int headsUpSnooze = Settings.System.getInt(getContentResolver(),
@@ -93,15 +94,15 @@ public class HeadsUpCategory extends SettingsPreferenceFragment implements
         if (preference == mHeadsUpTimeOut) {
             int headsUpTimeOut = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.HEADS_UP_TIMEOUT,
-                    headsUpTimeOut);
+                Settings.System.HEADS_UP_TIMEOUT,
+                headsUpTimeOut);
             updateHeadsUpTimeOutSummary(headsUpTimeOut);
             return true;
         } else if (preference == mHeadsUpSnoozeTime) {
             int headsUpSnooze = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
-                    headsUpSnooze);
+                Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
+                headsUpSnooze);
             updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
             return true;
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2016 Android Open Source Illusion Project
+<!--  Copyright (C) 2017 Android Open Source Illusion Project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -15,66 +15,67 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 
-        <PreferenceScreen
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-            android:title="@string/system_category" >
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:layout="@layout/tab_ui"
+    android:title="@string/system_category" >
 
-       <Preference
-            android:key="aosip_settings_summary"
-            android:title="@string/owlsnest_settings_summary_title" />
+     <Preference
+         android:key="aosip_settings_summary"
+         android:title="@string/owlsnest_settings_summary_title" />
 
-        <ListPreference
-             android:key="media_scanner_on_boot"
-             android:title="@string/media_scanner_on_boot_title"
-             android:entries="@array/media_scanner_on_boot_entries"
-             android:entryValues="@array/media_scanner_on_boot_values"
-             android:persistent="false" />
+     <ListPreference
+         android:key="media_scanner_on_boot"
+         android:title="@string/media_scanner_on_boot_title"
+         android:entries="@array/media_scanner_on_boot_entries"
+         android:entryValues="@array/media_scanner_on_boot_values"
+         android:persistent="false" />
 			 
-		<ListPreference
-             android:key="pref_scrollingcache"
-             android:dialogTitle="@string/pref_scrollingcache_title"
-             android:title="@string/pref_scrollingcache_title"
-             android:summary="@string/pref_scrollingcache_summary"
-             android:entries="@array/entries_scrollingcache"
-             android:entryValues="@array/values_scrollingcache" />
+     <ListPreference
+         android:key="pref_scrollingcache"
+         android:dialogTitle="@string/pref_scrollingcache_title"
+         android:title="@string/pref_scrollingcache_title"
+         android:summary="@string/pref_scrollingcache_summary"
+         android:entries="@array/entries_scrollingcache"
+         android:entryValues="@array/values_scrollingcache" />
 
-        <ListPreference
-             android:key="screenrecord_chord_type"
-             android:title="@string/screen_record_chord_title"
-             android:entries="@array/screen_record_chord_entries"
-             android:entryValues="@array/screen_record_chord_values" />
+     <ListPreference
+         android:key="screenrecord_chord_type"
+         android:title="@string/screen_record_chord_title"
+         android:entries="@array/screen_record_chord_entries"
+         android:entryValues="@array/screen_record_chord_values" />
 
-         <com.aosip.owlsnest.preference.CustomSeekBarPreference
-             android:key="screenshot_delay"
-             android:title="@string/screenshot_delay_title"
-             android:summary="@string/screenshot_delay_summary"
-             settings:max="10000"
-             settings:min="100"
-             settings:interval="100"
-             settings:units="ms"
-             android:persistent="false" />
+     <com.aosip.owlsnest.preference.CustomSeekBarPreference
+         android:key="screenshot_delay"
+         android:title="@string/screenshot_delay_title"
+         android:summary="@string/screenshot_delay_summary"
+         settings:max="10000"
+         settings:min="100"
+         settings:interval="100"
+         settings:units="ms"
+         android:persistent="false" />
 
-         <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
-             android:key="toast_icon"
-             android:title="@string/toast_icon_title"
-             android:summary="@string/toast_icon_summary"
-             android:defaultValue="false" />
+     <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
+         android:key="toast_icon"
+         android:title="@string/toast_icon_title"
+         android:summary="@string/toast_icon_summary"
+         android:defaultValue="false" />
 
-        <Preference
-             android:id="@+id/alarm_blocker"
-             android:title="@string/alarm_blocker"
-             android:fragment="com.aosip.owlsnest.advanced.AlarmBlocker" />
+    <Preference
+         android:id="@+id/alarm_blocker"
+         android:title="@string/alarm_blocker"
+         android:fragment="com.aosip.owlsnest.advanced.AlarmBlocker" />
 
-        <Preference
-             android:key="wakelockblocker"
-             android:fragment="com.aosip.owlsnest.advanced.WakelockBlocker"
-             android:title="@string/wakelockblocker_category" />
+    <Preference
+         android:key="wakelockblocker"
+         android:fragment="com.aosip.owlsnest.advanced.WakelockBlocker"
+         android:title="@string/wakelockblocker_category" />
 
-        <Preference
-             android:key="screenstate_category"
-             android:title="@string/screen_state_toggles_title" 
-             android:fragment="com.aosip.owlsnest.advanced.ScreenStateToggles" />
+    <Preference
+         android:key="screenstate_category"
+         android:title="@string/screen_state_toggles_title" 
+         android:fragment="com.aosip.owlsnest.advanced.ScreenStateToggles" />
 
 </PreferenceScreen>
 

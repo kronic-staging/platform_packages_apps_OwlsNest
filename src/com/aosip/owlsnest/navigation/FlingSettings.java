@@ -18,10 +18,6 @@ package com.aosip.owlsnest.navigation;
 
 import java.util.ArrayList;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
-import com.aosip.owlsnest.preference.CustomSeekBarPreference;
-
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.utils.du.ActionConstants;
@@ -32,6 +28,8 @@ import com.android.settings.R;
 import com.aosip.owlsnest.utils.IconPickHelper;
 import com.aosip.owlsnest.preference.ActionPreference;
 import com.aosip.owlsnest.utils.ActionFragment;
+import com.aosip.owlsnest.preference.CustomSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.app.ActionBar;
 import android.content.Context;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,8 +47,8 @@ public class NotificationCategory extends SettingsPreferenceFragment implements
     private SwitchPreference mMissedCallBreath;
     private SwitchPreference mVoicemailBreath;
     private SwitchPreference mSmsBreath;
-    private PreferenceGroup mBreathingNotifications;
     private SwitchPreference mFlashlightNotification;
+    private PreferenceGroup mBreathingNotifications;
 
     @Override
     protected int getMetricsCategory() {
@@ -86,15 +86,15 @@ public class NotificationCategory extends SettingsPreferenceFragment implements
         if(cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
 
             mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1);
+                Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1);
             mMissedCallBreath.setOnPreferenceChangeListener(this);
 
             mVoicemailBreath.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
+                Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
             mVoicemailBreath.setOnPreferenceChangeListener(this);
 
             mSmsBreath.setChecked(Settings.Global.getInt(resolver,
-                    Settings.Global.KEY_SMS_BREATH, 0) == 1);
+                Settings.Global.KEY_SMS_BREATH, 0) == 1);
             mSmsBreath.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(mMissedCallBreath);

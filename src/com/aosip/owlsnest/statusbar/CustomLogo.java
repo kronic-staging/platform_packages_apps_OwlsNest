@@ -40,7 +40,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class CustomLogo extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    public static final String TAG = "Logo";
+    public static final String TAG = "CustomLogo";
 
     private static final String KEY_CUSTOM_LOGO_COLOR = "custom_logo_color";
     private static final String KEY_CUSTOM_LOGO_STYLE = "custom_logo_style";
@@ -63,28 +63,26 @@ public class CustomLogo extends SettingsPreferenceFragment implements Preference
             (ColorPickerPreference) prefSet.findPreference(KEY_CUSTOM_LOGO_COLOR);
         mCustomLogoColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.CUSTOM_LOGO_COLOR, 0xffffffff);
+            Settings.System.CUSTOM_LOGO_COLOR, 0xffffffff);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mCustomLogoColor.setSummary(hexColor);
-            mCustomLogoColor.setNewPreviewColor(intColor);
+        mCustomLogoColor.setSummary(hexColor);
+        mCustomLogoColor.setNewPreviewColor(intColor);
 
+        mCustomLogoStyle = (ListPreference) findPreference(KEY_CUSTOM_LOGO_STYLE);
+        int LogoStyle = Settings.System.getIntForUser(getContentResolver(),
+            Settings.System.CUSTOM_LOGO_STYLE, 0,
+            UserHandle.USER_CURRENT);
+        mCustomLogoStyle.setValue(String.valueOf(LogoStyle));
+        mCustomLogoStyle.setSummary(mCustomLogoStyle.getEntry());
+        mCustomLogoStyle.setOnPreferenceChangeListener(this);
 
-            mCustomLogoStyle = (ListPreference) findPreference(KEY_CUSTOM_LOGO_STYLE);
-            int LogoStyle = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.CUSTOM_LOGO_STYLE, 0,
-                    UserHandle.USER_CURRENT);
-            mCustomLogoStyle.setValue(String.valueOf(LogoStyle));
-            mCustomLogoStyle.setSummary(mCustomLogoStyle.getEntry());
-            mCustomLogoStyle.setOnPreferenceChangeListener(this);
-
-            mCustomLogoPos = (ListPreference) findPreference(KEY_CUSTOM_LOGO_POS);
-            int cLogopos = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.CUSTOM_LOGO_POSITION, 0,
-                    UserHandle.USER_CURRENT);
-            mCustomLogoPos.setValue(String.valueOf(cLogopos));
-            mCustomLogoPos.setSummary(mCustomLogoPos.getEntry());
-            mCustomLogoPos.setOnPreferenceChangeListener(this);
-
+        mCustomLogoPos = (ListPreference) findPreference(KEY_CUSTOM_LOGO_POS);
+        int cLogopos = Settings.System.getIntForUser(getContentResolver(),
+            Settings.System.CUSTOM_LOGO_POSITION, 0,
+            UserHandle.USER_CURRENT);
+        mCustomLogoPos.setValue(String.valueOf(cLogopos));
+        mCustomLogoPos.setSummary(mCustomLogoPos.getEntry());
+        mCustomLogoPos.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -127,5 +125,4 @@ public class CustomLogo extends SettingsPreferenceFragment implements Preference
     public void onResume() {
         super.onResume();
     }
-
 }

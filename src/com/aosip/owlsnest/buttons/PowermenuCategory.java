@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,16 +54,15 @@ public class PowermenuCategory extends SettingsPreferenceFragment implements
 
         mPowerRebootDialogDim = (CustomSeekBarPreference) prefScreen.findPreference(POWER_REBOOT_DIALOG_DIM);
         int powerRebootDialogDim = Settings.System.getInt(resolver,
-                Settings.System.POWER_REBOOT_DIALOG_DIM, 50);
+            Settings.System.POWER_REBOOT_DIALOG_DIM, 50);
         mPowerRebootDialogDim.setValue(powerRebootDialogDim / 1);
         mPowerRebootDialogDim.setOnPreferenceChangeListener(this);
 
         mPowerMenuAnimations = (ListPreference) findPreference(POWER_MENU_ANIMATIONS);
         mPowerMenuAnimations.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
+            getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
         mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
         mPowerMenuAnimations.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
@@ -76,11 +75,11 @@ public class PowermenuCategory extends SettingsPreferenceFragment implements
         if (preference == mPowerRebootDialogDim) {
             int alpha = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_REBOOT_DIALOG_DIM, alpha * 1);
+                Settings.System.POWER_REBOOT_DIALOG_DIM, alpha * 1);
             return true;
         } else if (preference == mPowerMenuAnimations) {
             Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
-                    Integer.valueOf((String) newValue));
+                Integer.valueOf((String) newValue));
             mPowerMenuAnimations.setValue(String.valueOf(newValue));
             mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
             return true;

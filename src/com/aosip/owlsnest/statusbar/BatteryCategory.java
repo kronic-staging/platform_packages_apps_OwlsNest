@@ -50,9 +50,12 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     private static final int STATUS_BAR_BATTERY_STYLE_PORTRAIT = 0;
-
-    private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
+    private static final int STATUS_BAR_BATTERY_STYLE_LANDSCAPE = 5;
+    private static final int STATUS_BAR_BATTERY_STYLE_CIRLCE = 2;
+    private static final int STATUS_BAR_BATTERY_STYLE_BIGCIRCLE = 7;
+    private static final int STATUS_BAR_BATTERY_STYLE_SOLID = 8;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
+    private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
 
     private int mBatteryTileStyleValue;
     private int mStatusBarBatteryValue;
@@ -85,40 +88,40 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
 
         mForceChargeBatteryText = (SwitchPreference) findPreference(FORCE_CHARGE_BATTERY_TEXT);
         mForceChargeBatteryText.setChecked((Settings.Secure.getInt(resolver,
-                Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, 1) == 1));
+            Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, 1) == 1));
         mForceChargeBatteryText.setOnPreferenceChangeListener(this);
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
+            Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
         mStatusBarBattery.setValue(Integer.toString(mStatusBarBatteryValue));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
 
         int chargeColor = Settings.Secure.getInt(resolver,
-                Settings.Secure.STATUS_BAR_CHARGE_COLOR, Color.WHITE);
+            Settings.Secure.STATUS_BAR_CHARGE_COLOR, Color.WHITE);
         mChargeColor = (ColorPickerPreference) findPreference("status_bar_charge_color");
         mChargeColor.setNewPreviewColor(chargeColor);
         mChargeColor.setOnPreferenceChangeListener(this);
 
         mStatusBarBatteryShowPercent =
-                (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+            (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
         mStatusBarBatteryShowPercentValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+            Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
         mStatusBarBatteryShowPercent.setValue(Integer.toString(mStatusBarBatteryShowPercentValue));
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
 
         mTextChargingSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
         mTextChargingSymbolValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.TEXT_CHARGING_SYMBOL, 0);
+            Settings.Secure.TEXT_CHARGING_SYMBOL, 0);
         mTextChargingSymbol.setValue(Integer.toString(mTextChargingSymbolValue));
         mTextChargingSymbol.setSummary(mTextChargingSymbol.getEntry());
         mTextChargingSymbol.setOnPreferenceChangeListener(this);
 
         mBatteryTileStyle = (ListPreference) findPreference(BATTERY_TILE_STYLE);
         mBatteryTileStyleValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.BATTERY_TILE_STYLE, 0);
+            Settings.Secure.BATTERY_TILE_STYLE, 0);
         mBatteryTileStyle.setValue(Integer.toString(mBatteryTileStyleValue));
         mBatteryTileStyle.setSummary(mBatteryTileStyle.getEntry());
         mBatteryTileStyle.setOnPreferenceChangeListener(this);
@@ -144,46 +147,46 @@ public class BatteryCategory extends SettingsPreferenceFragment implements
             mStatusBarBatteryValue = Integer.valueOf((String) newValue);
             int index = mStatusBarBattery.findIndexOfValue((String) newValue);
             mStatusBarBattery.setSummary(
-                    mStatusBarBattery.getEntries()[index]);
+                mStatusBarBattery.getEntries()[index]);
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, mStatusBarBatteryValue);
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE, mStatusBarBatteryValue);
             enableStatusBarBatteryDependents();
             return true;
         } else if (preference == mStatusBarBatteryShowPercent) {
             mStatusBarBatteryShowPercentValue = Integer.valueOf((String) newValue);
             int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
             mStatusBarBatteryShowPercent.setSummary(
-                    mStatusBarBatteryShowPercent.getEntries()[index]);
+                mStatusBarBatteryShowPercent.getEntries()[index]);
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, mStatusBarBatteryShowPercentValue);
+                Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, mStatusBarBatteryShowPercentValue);
             enableStatusBarBatteryDependents();
             return true;
         } else if  (preference == mForceChargeBatteryText) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, checked ? 1:0);
+                Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, checked ? 1:0);
             //enableStatusBarBatteryDependents();
             return true;
         } else if (preference.equals(mChargeColor)) {
             int color = ((Integer) newValue).intValue();
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.STATUS_BAR_CHARGE_COLOR, color);
+                Settings.Secure.STATUS_BAR_CHARGE_COLOR, color);
             return true;
         } else if (preference == mTextChargingSymbol) {
             mTextChargingSymbolValue = Integer.valueOf((String) newValue);
             int index = mTextChargingSymbol.findIndexOfValue((String) newValue);
             mTextChargingSymbol.setSummary(
-                    mTextChargingSymbol.getEntries()[index]);
+                mTextChargingSymbol.getEntries()[index]);
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.TEXT_CHARGING_SYMBOL, mTextChargingSymbolValue);
+                Settings.Secure.TEXT_CHARGING_SYMBOL, mTextChargingSymbolValue);
             return true;
         } else if (preference == mBatteryTileStyle) {
             mBatteryTileStyleValue = Integer.valueOf((String) newValue);
             int index = mBatteryTileStyle.findIndexOfValue((String) newValue);
             mBatteryTileStyle.setSummary(
-                    mBatteryTileStyle.getEntries()[index]);
+                mBatteryTileStyle.getEntries()[index]);
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.BATTERY_TILE_STYLE, mBatteryTileStyleValue);
+                Settings.Secure.BATTERY_TILE_STYLE, mBatteryTileStyleValue);
             return true;
         }
         return false;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ public class OmniCategory extends SettingsPreferenceFragment implements OnPrefer
         mRecentsUseOmniSwitch = (SwitchPreference) prefSet.findPreference(RECENTS_USE_OMNISWITCH);
         try {
             mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.RECENTS_USE_OMNISWITCH) == 1);
+                Settings.System.RECENTS_USE_OMNISWITCH) == 1);
             mOmniSwitchInitCalled = true;
         } catch(SettingNotFoundException e){
             // if the settings value is unset
@@ -77,9 +77,8 @@ public class OmniCategory extends SettingsPreferenceFragment implements OnPrefer
         mRecentsUseOmniSwitch.setOnPreferenceChangeListener(this);
 
         mOmniSwitchSettings = (Preference)
-                prefSet.findPreference(OMNISWITCH_START_SETTINGS);
+            prefSet.findPreference(OMNISWITCH_START_SETTINGS);
         mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
-
     }
 
     @Override

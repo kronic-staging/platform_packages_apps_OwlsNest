@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ public class OptionsCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LS_SECURE_CAT = "lockscreen_secure_options";
-
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
@@ -62,7 +61,7 @@ public class OptionsCategory extends SettingsPreferenceFragment implements
 
         mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
         mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
-                resolver, Settings.System.LOCK_CLOCK_FONTS, 4)));
+            resolver, Settings.System.LOCK_CLOCK_FONTS, 4)));
         mLockClockFonts.setSummary(mLockClockFonts.getEntry());
         mLockClockFonts.setOnPreferenceChangeListener(this);
 
@@ -84,7 +83,7 @@ public class OptionsCategory extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mLockClockFonts) {
             Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
-                    Integer.valueOf((String) newValue));
+                Integer.valueOf((String) newValue));
             mLockClockFonts.setValue(String.valueOf(newValue));
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;

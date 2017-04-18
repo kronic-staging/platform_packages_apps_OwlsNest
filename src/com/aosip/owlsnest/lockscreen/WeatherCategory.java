@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,14 +35,10 @@ import com.android.settings.SettingsPreferenceFragment;
 public class WeatherCategory extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String PREF_CONDITION_ICON =
-            "weather_condition_icon";
-    private static final String PREF_HIDE_WEATHER =
-            "weather_hide_panel";
-    private static final String PREF_NUMBER_OF_NOTIFICATIONS =
-            "weather_number_of_notifications";
-    private static final String KEY_LOCK_CLOCK =
-            "lock_clock";
+    private static final String PREF_CONDITION_ICON = "weather_condition_icon";
+    private static final String PREF_HIDE_WEATHER = "weather_hide_panel";
+    private static final String PREF_NUMBER_OF_NOTIFICATIONS = "weather_number_of_notifications";
+    private static final String KEY_LOCK_CLOCK = "lock_clock";
 
     private static final int MONOCHROME_ICON = 0;
 
@@ -72,24 +68,24 @@ public class WeatherCategory extends SettingsPreferenceFragment implements
         }
 
         mConditionIcon =
-                (ListPreference) findPreference(PREF_CONDITION_ICON);
+            (ListPreference) findPreference(PREF_CONDITION_ICON);
         int conditionIcon = Settings.System.getInt(mResolver,
-               Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, MONOCHROME_ICON);
+            Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, MONOCHROME_ICON);
         mConditionIcon.setValue(String.valueOf(conditionIcon));
         mConditionIcon.setSummary(mConditionIcon.getEntry());
         mConditionIcon.setOnPreferenceChangeListener(this);
 
         mHideWeather =
-                (ListPreference) findPreference(PREF_HIDE_WEATHER);
+            (ListPreference) findPreference(PREF_HIDE_WEATHER);
         int hideWeather = Settings.System.getInt(mResolver,
-               Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, 0);
+            Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, 0);
         mHideWeather.setValue(String.valueOf(hideWeather));
         mHideWeather.setOnPreferenceChangeListener(this);
 
         mNumberOfNotifications =
-                (CustomSeekBarPreference) findPreference(PREF_NUMBER_OF_NOTIFICATIONS);
+            (CustomSeekBarPreference) findPreference(PREF_NUMBER_OF_NOTIFICATIONS);
         int numberOfNotifications = Settings.System.getInt(mResolver,
-                Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS, 4);
+            Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS, 4);
         mNumberOfNotifications.setValue(numberOfNotifications);
         mNumberOfNotifications.setOnPreferenceChangeListener(this);
 
@@ -122,20 +118,20 @@ public class WeatherCategory extends SettingsPreferenceFragment implements
             int intValue = Integer.valueOf((String) newValue);
             int index = mConditionIcon.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
-                    Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, intValue);
+                Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, intValue);
             mConditionIcon.setSummary(mConditionIcon.getEntries()[index]);
             return true;
         } else if (preference == mHideWeather) {
             int intValue = Integer.valueOf((String) newValue);
             int index = mHideWeather.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
-                    Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, intValue);
+                Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, intValue);
             updatePreference();
             return true;
         } else if (preference == mNumberOfNotifications) {
             int numberOfNotifications = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS,
+                Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS,
             numberOfNotifications);
             return true;
         }

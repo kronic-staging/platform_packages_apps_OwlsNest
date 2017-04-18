@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,13 +49,12 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.aosip_shortcut);
-
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mLockscreenShortcutsLongpress = (SwitchPreference) findPreference(
-                PREF_LOCKSCREEN_SHORTCUTS_LONGPRESS);
+            PREF_LOCKSCREEN_SHORTCUTS_LONGPRESS);
         mLockscreenShortcutsLongpress.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, 1) == 1);
+            Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, 1) == 1);
         mLockscreenShortcutsLongpress.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(false);
@@ -79,8 +78,8 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mLockscreenShortcutsLongpress) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS,
-                    (Boolean) newValue ? 1 : 0);
+                Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS,
+                (Boolean) newValue ? 1 : 0);
         }
         return true;
     }

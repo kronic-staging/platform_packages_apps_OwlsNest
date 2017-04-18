@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Android Open Source Illusion Project
+ * Copyright (C) 2017 Android Open Source Illusion Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +49,9 @@ public class VolumeCategory extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         int cursorControlAction = Settings.System.getInt(resolver,
-                Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
+            Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
         mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
-                cursorControlAction);
-
+            cursorControlAction);
     }
 
     @Override
@@ -78,7 +77,7 @@ public class VolumeCategory extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mVolumeKeyCursorControl) {
             handleActionListChange(mVolumeKeyCursorControl, newValue,
-                    Settings.System.VOLUME_KEY_CURSOR_CONTROL);
+                Settings.System.VOLUME_KEY_CURSOR_CONTROL);
             return true;
         }
         return false;
