@@ -54,12 +54,6 @@
         android:defaultValue="true" />
 
     <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
-        android:key="qs_running_services_toggle"
-        android:title="@string/qs_running_services_title"
-        android:summary="@string/qs_running_services_summary"
-        android:defaultValue="true" />
-
-    <com.aosip.owlsnest.preference.SystemSettingSwitchPreference
         android:key="qs_settings_expanded_toggle"
         android:title="@string/qs_settings_expanded_title"
         android:summary="@string/qs_settings_expanded_summary"
