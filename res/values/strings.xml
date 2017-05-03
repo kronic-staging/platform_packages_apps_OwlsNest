@@ -245,10 +245,6 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Show roaming indicator</string>
-    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
-
     <!--Owlsnest navigation-->
     <string name="navigation_category">Navbar</string>
     <string name="navigation_title">Navigation</string>
